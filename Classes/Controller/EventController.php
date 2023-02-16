@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Netresearch\Demio\Controller;
 
-use Netresearch\T3Demio\Service\DemioService;
+use Netresearch\Demio\Service\DemioService;
 use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -44,7 +44,7 @@ class EventController extends ActionController
     public function listAction(): \Psr\Http\Message\ResponseInterface
     {
         // Get plugin configuration
-        $this->flexFormService->convertFlexFormContentToArray();
+        // $this->flexFormService->convertFlexFormContentToArray();
         $events = $this->demioService->fetchEventsFromApi();
 
         $this->view->assign('events', $events);
@@ -54,10 +54,9 @@ class EventController extends ActionController
     /**
      * action show
      *
-     * @param \Netresearch\Demio\Domain\Model\Event $event
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function showAction(\Netresearch\Demio\Domain\Model\Event $event): \Psr\Http\Message\ResponseInterface
+    public function showAction($event): \Psr\Http\Message\ResponseInterface
     {
         $this->view->assign('event', $event);
         return $this->htmlResponse();

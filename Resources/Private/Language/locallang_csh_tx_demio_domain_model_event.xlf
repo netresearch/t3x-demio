@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:demio/Resources/Private/Language/locallang_csh_tx_demio_domain_model_event.xlf" date="2023-02-16T22:14:29Z" product-name="demio">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

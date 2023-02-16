@@ -1,6 +1,6 @@
 <?php
 
-namespace Netresearch\T3Demio\Service;
+namespace Netresearch\Demio\Service;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use GuzzleHttp\Client;
@@ -9,7 +9,7 @@ use Psr\Log\LoggerAwareTrait;
 
 /**
  * Class DemioService
- * @package Netresearch\T3Demio\Service
+ * @package Netresearch\Demio\Service
  */
 class DemioService implements LoggerAwareInterface
 {
@@ -36,10 +36,10 @@ class DemioService implements LoggerAwareInterface
 
 
     public function __construct()
-    {   
+    {
         $this->httpClient = new Client();
         $extensionConfiguration = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class);
-        $this->settings = $extensionConfiguration->get('t3_demio');
+        $this->settings = $extensionConfiguration->get('demio');
     }
 
     /**
@@ -52,8 +52,8 @@ class DemioService implements LoggerAwareInterface
     public function fetchEventsFromApi(string $type = 'all'):mixed
     {
         $headers = [
-            'Api-Key' => $this->settings['API_KEY'],
-            'Api-Secret' => $this->settings['API_SECRET'],
+            'Api-Key' => $this->settings['key'],
+            'Api-Secret' => $this->settings['secret'],
             'Content-Type' => 'application/json'
         ];
 
@@ -61,7 +61,7 @@ class DemioService implements LoggerAwareInterface
             'headers' => $headers
         ]);
         $statusCode = $response->getStatusCode();
-        
+
         if ($statusCode === 200) {
             $responseData = json_decode($response->getBody(), true);
             return $responseData;

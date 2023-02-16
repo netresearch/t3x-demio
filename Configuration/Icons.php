@@ -2,11 +2,9 @@
 
 return [
     'demio-plugin-list' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:demio/Resources/Public/Icons/user_plugin_list.svg'
+        'source' => 'EXT:demio/Resources/Public/Icons/Icon.png'
     ],
     'demio-plugin-single' => [
-        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:demio/Resources/Public/Icons/user_plugin_single.svg'
+        'source' => 'EXT:demio/Resources/Public/Icons/Icon.png'
     ],
 ];
