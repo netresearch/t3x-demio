@@ -1,0 +1,52 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>
+                    LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.sheetTitle
+                </sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.type>
+                        <label>
+                            LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type
+                        </label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <numIndex index="0">
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.all
+                                    </numIndex>
+                                    <numIndex index="1"></numIndex>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <numIndex index="0">
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.upcoming
+                                    </numIndex>
+                                    <numIndex index="1">upcoming</numIndex>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <numIndex index="0">
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.past
+                                    </numIndex>
+                                    <numIndex index="1">past</numIndex>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <numIndex index="0">
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.automated
+                                    </numIndex>
+                                    <numIndex index="1">automated</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.type>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
