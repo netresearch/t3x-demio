@@ -43,9 +43,7 @@ class EventController extends ActionController
      */
     public function listAction(): \Psr\Http\Message\ResponseInterface
     {
-        // Get plugin configuration
-        // $this->flexFormService->convertFlexFormContentToArray();
-        $events = $this->demioService->fetchEventsFromApi();
+        $events = $this->demioService->fetchEventsFromApi($this->settings['type']);
 
         $this->view->assign('events', $events);
         return $this->htmlResponse();

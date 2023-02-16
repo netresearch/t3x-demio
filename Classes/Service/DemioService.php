@@ -2,13 +2,14 @@
 
 namespace Netresearch\Demio\Service;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use GuzzleHttp\Client;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class DemioService
+ *
  * @package Netresearch\Demio\Service
  */
 class DemioService implements LoggerAwareInterface
@@ -20,21 +21,24 @@ class DemioService implements LoggerAwareInterface
     use LoggerAwareTrait;
 
     /**
-     * API URL from demio
+     * API URL from Demio
      */
-    const API_URL = 'https://my.demio.com/api/v1/events?type=past';
+    const API_URL = 'https://my.demio.com/api/v1/events';
 
     /**
      * @var Client $httpClient The HTTP client
      */
-    protected $httpClient;
+    protected Client $httpClient;
 
     /**
      * @var array $settings The extension settings
      */
-    protected $settings;
+    protected mixed $settings;
 
 
+    /**
+     * DemioService constructor.
+     */
     public function __construct()
     {
         $this->httpClient = new Client();
@@ -46,25 +50,25 @@ class DemioService implements LoggerAwareInterface
      * Fetches events from the demio API
      *
      * @param string $type
-     * @throws \RuntimeException
+     *
      * @return mixed
+     * @throws \RuntimeException
      */
-    public function fetchEventsFromApi(string $type = 'all'):mixed
+    public function fetchEventsFromApi(string $type = ''): mixed
     {
         $headers = [
-            'Api-Key' => $this->settings['key'],
-            'Api-Secret' => $this->settings['secret'],
+            'Api-Key'      => $this->settings['key'],
+            'Api-Secret'   => $this->settings['secret'],
             'Content-Type' => 'application/json'
         ];
 
-        $response = $this->httpClient->request('GET', self::API_URL, [
+        $response = $this->httpClient->request('GET', self::API_URL . '?type=' . $type, [
             'headers' => $headers
         ]);
         $statusCode = $response->getStatusCode();
 
         if ($statusCode === 200) {
-            $responseData = json_decode($response->getBody(), true);
-            return $responseData;
+            return json_decode($response->getBody(), true);
         } else {
             $error = 'API request failed with status code ' . $statusCode;
             $this->logger->error($error);
