@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-01-27T17:38:32Z"
+        product-name="t3-demio">
+        <header/>
+        <body>
+            <trans-unit id="extension.title">
+                <target>Demio</target>
+            </trans-unit>
+            <trans-unit id="plugin.list.title">
+                <target>Demio: Webinare auflisten</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

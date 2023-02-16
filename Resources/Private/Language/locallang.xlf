@@ -7,6 +7,9 @@
             <trans-unit id="extension.title">
                 <source>Demio</source>
             </trans-unit>
+            <trans-unit id="plugin.list.title">
+                <source>Demio: List Webinares</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
