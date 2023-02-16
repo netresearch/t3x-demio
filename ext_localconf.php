@@ -5,10 +5,10 @@ defined('TYPO3_MODE') || die('Access denied.');
     'T3Demio',
     'List',
     [
-        \Netresearch\T3Demio\Controller\ListController::class => 'list'
+        \Netresearch\T3Demio\Controller\EventController::class => 'list'
     ],
     // non-cacheable actions
     [
-        \Netresearch\T3Demio\Controller\ListController::class => 'list'
+        \Netresearch\T3Demio\Controller\EventController::class => 'list'
     ]
 );

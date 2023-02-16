@@ -6,6 +6,6 @@ services:
   Netresearch\T3Demio\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
-  Netresearch\T3Demio\Controller\ListController:
+  Netresearch\T3Demio\Controller\EventController:
     arguments:
       $demioService: '@Netresearch\T3Demio\Service\DemioService'

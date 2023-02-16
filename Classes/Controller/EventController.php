@@ -5,11 +5,10 @@ namespace Netresearch\T3Demio\Controller;
 
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-use TYPO3\CMS\Core\Core\Environment;
 
 use Netresearch\T3Demio\Service\DemioService;
 
-class ListController extends ActionController
+class EventController extends ActionController
   {
 
     /**
@@ -21,15 +20,16 @@ class ListController extends ActionController
      {
         $this->demioService = $demioService;
      }
-    
 
+    /**
+     * Summary of listAction
+     * @return void
+     */
     public function listAction()
     {
       $data =  $this->demioService->fetchEventsFromApi();
-        DebuggerUtility::var_dump($data);
         $this->view->assign('events', $data);
 
     }
-
 
 }
