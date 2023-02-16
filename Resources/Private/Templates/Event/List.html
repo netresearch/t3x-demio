@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <h1>Listing for Event</h1>
+
+    <f:flashMessages />
+
+    <table class="tx_demio">
+        <tr>
+            <th><f:translate key="tx_demio_domain_model_event.name" /></th>
+        </tr>
+        <f:for each="{events}" as="event">
+            <tr>
+                <td><f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action></td>
+            </tr>
+        </f:for>
+    </table>
+
+</f:section>
+</html>

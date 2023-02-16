@@ -1,0 +1,78 @@
+plugin.tx_demio_list {
+    view {
+        templateRootPaths.0 = EXT:demio/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_demio_list.view.templateRootPath}
+        partialRootPaths.0 = EXT:demio/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_demio_list.view.partialRootPath}
+        layoutRootPaths.0 = EXT:demio/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_demio_list.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_demio_list.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+plugin.tx_demio_single {
+    view {
+        templateRootPaths.0 = EXT:demio/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_demio_single.view.templateRootPath}
+        partialRootPaths.0 = EXT:demio/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_demio_single.view.partialRootPath}
+        layoutRootPaths.0 = EXT:demio/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_demio_single.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_demio_single.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+
+# these classes are only used in auto-generated templates
+plugin.tx_demio._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color: #FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    input.f3-form-error {
+        background-color: #FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    .tx-demio table {
+        border-collapse: separate;
+        border-spacing: 10px;
+    }
+
+    .tx-demio table th {
+        font-weight: bold;
+    }
+
+    .tx-demio table td {
+        vertical-align: top;
+    }
+
+    .typo3-messages .message-error {
+        color: red;
+    }
+
+    .typo3-messages .message-ok {
+        color: green;
+    }
+)
