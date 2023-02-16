@@ -1,0 +1,4 @@
+# cat=API; type=string; label=API Key: enter from Demio
+APIKey =
+# cat=API; type=string; label=API Secret: enter from Demio
+APISecret =

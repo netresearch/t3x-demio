@@ -1,0 +1,38 @@
+[
+  {
+    "id": 62,
+    "name": "First Webinar",
+    "description": "First Webinar description",
+    "date_id": 1218,
+    "status": "running",
+    "timestamp": 1456723800,
+    "zone": "Europe/Kiev",
+    "registration_url": "http://my.demio.loc/ref/FKXeiDqyQsRYbfiv",
+    "automated": {
+      "ready": true,
+      "duration": 3620
+    }
+  },
+  {
+    "id": 45,
+    "name": "Second Webinar",
+    "description": "Second Webinar description",
+    "date_id": 1196,
+    "status": "scheduled",
+    "timestamp": 1456765200,
+    "zone": "America/New_York",
+    "registration_url": "http://my.demio.loc/ref/pgRzWQhYLPmuboOA",
+    "automated": null
+  },
+  {
+    "id": 59,
+    "name": "Company webinar",
+    "description": "",
+    "date_id": 1193,
+    "status": "scheduled",
+    "timestamp": 1460673000,
+    "zone": "Europe/Amsterdam",
+    "registration_url": "http://my.demio.loc/ref/QmQwocrT8vAGneSy",
+    "automated": null
+  }
+]
