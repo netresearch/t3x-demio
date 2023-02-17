@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Netresearch\Demio\Controller;
 
 use Netresearch\Demio\Service\DemioService;
-use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 
@@ -25,14 +24,11 @@ class EventController extends ActionController
 {
 
     /**
-     * @param DemioService    $demioService
-     * @param FlexFormService $flexFormService
+     * @param DemioService $demioService
      */
     public function __construct(
-        private DemioService             $demioService,
-        private readonly FlexFormService $flexFormService)
+        private DemioService $demioService)
     {
-        $this->demioService = $demioService;
     }
 
 

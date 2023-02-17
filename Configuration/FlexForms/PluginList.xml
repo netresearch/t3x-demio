@@ -13,6 +13,8 @@
                 <el>
                     <settings.type>
                         <label>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type</label>
+                        <description>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.description</description>
+
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
@@ -36,6 +38,20 @@
                             </items>
                         </config>
                     </settings.type>
+                    <settings.showDescription>
+                        <label>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription</label>
+                        <description>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription.description</description>
+                        <config>
+                            <type>check</type>
+                            <renderType>checkboxToggle</renderType>
+                            <items type="array">
+                                <numIndex index="0">
+                                    <numIndex index="0">Show description</numIndex>
+                                    <numIndex index="1">true</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                    </settings.showDescription>
                 </el>
             </ROOT>
         </sDEF>

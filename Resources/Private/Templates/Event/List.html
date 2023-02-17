@@ -1,18 +1,43 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 <f:section name="content">
-    <h1>Listing for Event</h1>
+    <f:flashMessages/>
 
-    <f:flashMessages />
-
-    <table class="tx_demio">
-        <tr>
-            <th><f:translate key="tx_demio_domain_model_event.name" /></th>
-        </tr>
+    <table class="table table-striped">
         <f:for each="{events}" as="event">
             <tr>
-                <td><f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action></td>
+                <td>
+                    <f:format.date format="%H:%m - %d. %B %Y">{event.timestamp}</f:format.date>
+                </td>
+                <td>
+                    <f:if condition="{settings.showDescription}">
+                        <f:then>
+                            <p>
+                                <f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action>
+                            </p>
+                            {event.description -> f:format.html()}
+                        </f:then>
+                        <f:else>
+                            <f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action>
+
+                        </f:else>
+                    </f:if>
+                </td>
+                <td>
+                    <f:if condition="{event.registration_url}">
+                        <f:then>
+                            <f:link.external uri="{event.registration_url}" class="btn btn-primary" target="demio">
+                                <f:translate key="register"/>
+                            </f:link.external>
+                        </f:then>
+                        <f:else>
+                            <f:link.action action="show" arguments="{event : event}" class="btn btn-primary">
+                                <f:translate key="details"/>
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </td>
             </tr>
         </f:for>
     </table>

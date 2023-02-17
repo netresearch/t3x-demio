@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2023-01-27T17:38:32Z"
-        product-name="t3-demio">
-        <header/>
-        <body>
-            <trans-unit id="extension.title">
-                <source>Demio</source>
-            </trans-unit>
-            <trans-unit id="plugin.list.title">
-                <source>Demio: List Webinares</source>
-            </trans-unit>
-        </body>
-    </file>
+	<file source-language="en" datatype="plaintext" original="messages" date="2023-01-27T17:38:32Z"
+		  product-name="demio">
+		<header/>
+		<body>
+			<trans-unit id="extension.title">
+				<source>Demio</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.title">
+				<source>Demio: List Webinares</source>
+			</trans-unit>
+
+			<trans-unit id="register">
+				<source>register</source>
+			</trans-unit>
+			<trans-unit id="details">
+				<source>details</source>
+			</trans-unit>
+		</body>
+	</file>
 </xliff>
