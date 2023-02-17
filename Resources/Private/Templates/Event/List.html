@@ -14,30 +14,16 @@
                     <f:if condition="{settings.showDescription}">
                         <f:then>
                             <p>
-                                <f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action>
+                                <f:link.action action="show" arguments="{id: event.id}">{event.name}</f:link.action>
                             </p>
                             {event.description -> f:format.html()}
                         </f:then>
                         <f:else>
                             <f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action>
-
                         </f:else>
                     </f:if>
                 </td>
-                <td>
-                    <f:if condition="{event.registration_url}">
-                        <f:then>
-                            <f:link.external uri="{event.registration_url}" class="btn btn-primary" target="demio">
-                                <f:translate key="register"/>
-                            </f:link.external>
-                        </f:then>
-                        <f:else>
-                            <f:link.action action="show" arguments="{event : event}" class="btn btn-primary">
-                                <f:translate key="details"/>
-                            </f:link.action>
-                        </f:else>
-                    </f:if>
-                </td>
+                <td><f:render partial="Event/Cta" arguments="{event:event}" /></td>
             </tr>
         </f:for>
     </table>

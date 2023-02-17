@@ -3,6 +3,8 @@
 namespace Netresearch\Demio\Service;
 
 use GuzzleHttp\Client;
+use phpDocumentor\Reflection\Types\Boolean;
+use phpDocumentor\Reflection\Types\Integer;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -23,7 +25,7 @@ class DemioService implements LoggerAwareInterface
     /**
      * API URL from Demio
      */
-    const API_URL = 'https://my.demio.com/api/v1/events';
+    const API_URL = 'https://my.demio.com/api/v1/';
 
     /**
      * @var Client $httpClient The HTTP client
@@ -35,6 +37,7 @@ class DemioService implements LoggerAwareInterface
      */
     protected mixed $settings;
 
+    protected mixed $headers;
 
     /**
      * DemioService constructor.
@@ -44,26 +47,25 @@ class DemioService implements LoggerAwareInterface
         $this->httpClient = new Client();
         $extensionConfiguration = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class);
         $this->settings = $extensionConfiguration->get('demio');
-    }
-
-    /**
-     * Fetches events from the demio API
-     *
-     * @param string $type
-     *
-     * @return mixed
-     * @throws \RuntimeException
-     */
-    public function fetchEventsFromApi(string $type = ''): mixed
-    {
-        $headers = [
+        $this->headers = [
             'Api-Key'      => $this->settings['key'],
             'Api-Secret'   => $this->settings['secret'],
             'Content-Type' => 'application/json'
         ];
+    }
 
-        $response = $this->httpClient->request('GET', self::API_URL . '?type=' . $type, [
-            'headers' => $headers
+    /**
+     * Fetches events from the Demio API
+     *
+     * @param string $type The type of events to fetch
+     *
+     * @return mixed
+     * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
+     */
+    public function fetchEventsFromApi(string $type = ''): mixed
+    {
+        $response = $this->httpClient->request('GET', self::API_URL . 'events?type=' . $type, [
+            'headers' => $this->headers
         ]);
         $statusCode = $response->getStatusCode();
 
@@ -75,4 +77,30 @@ class DemioService implements LoggerAwareInterface
             throw new \RuntimeException($error);
         }
     }
+
+    /**
+     * Fetches a single event from the demio API
+     *
+     * @param Integer $id
+     * @param bool    $active
+     *
+     * @return mixed
+     * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
+     */
+    public function fetchEventFromApi(int $id, bool $active = true): mixed
+    {
+        $response = $this->httpClient->request('GET', self::API_URL.'event/' . $id . '?active=' . $active, [
+            'headers' => $this->headers
+        ]);
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode === 200) {
+            return json_decode($response->getBody(), true);
+        } else {
+            $error = 'API request failed with status code ' . $statusCode;
+            $this->logger->error($error);
+            throw new \RuntimeException($error);
+        }
+    }
+
 }

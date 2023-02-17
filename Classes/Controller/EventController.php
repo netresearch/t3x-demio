@@ -4,7 +4,9 @@ declare(strict_types=1);
 namespace Netresearch\Demio\Controller;
 
 use Netresearch\Demio\Service\DemioService;
+use phpDocumentor\Reflection\Types\Integer;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 
 /**
@@ -26,11 +28,7 @@ class EventController extends ActionController
     /**
      * @param DemioService $demioService
      */
-    public function __construct(
-        private DemioService $demioService)
-    {
-    }
-
+    public function __construct(private readonly DemioService $demioService){}
 
     /**
      * action list
@@ -41,6 +39,11 @@ class EventController extends ActionController
     {
         $events = $this->demioService->fetchEventsFromApi($this->settings['type']);
 
+        // Use TYPO3 cache framework to cache the events
+
+
+
+
         $this->view->assign('events', $events);
         return $this->htmlResponse();
     }
@@ -50,9 +53,15 @@ class EventController extends ActionController
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function showAction($event): \Psr\Http\Message\ResponseInterface
+    public function showAction(): \Psr\Http\Message\ResponseInterface
     {
-        $this->view->assign('event', $event);
+        if($this->request->hasArgument('event')) {
+            $id = (int) $this->request->getArgument('event')['id'];
+            $event = $this->demioService->fetchEventFromApi($id);
+            $this->view->assign('event', $event);
+        } else {
+            $this->view->assign('event', null);
+        }
         return $this->htmlResponse();
     }
 
