@@ -1,87 +1,108 @@
 <?php
 
-namespace Netresearch\T3Demio\Service;
+namespace Netresearch\Demio\Service;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use GuzzleHttp\Client;
+use phpDocumentor\Reflection\Types\Boolean;
+use phpDocumentor\Reflection\Types\Integer;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerAwareTrait;
-
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * This class provides functionality to fetch event data from Demio API using Guzzle.
- * It implements LoggerAwareInterface to enable logging functionality.
+ * Class DemioService
+ *
+ * @package Netresearch\Demio\Service
  */
 class DemioService implements LoggerAwareInterface
 {
 
+    /**
+     * Use the logger trait to get a logger in your class
+     */
     use LoggerAwareTrait;
 
     /**
-     * URL for Demio API.
+     * API URL from Demio
      */
-    const API_URL = 'https://my.demio.com/api/v1/events?type=past';
+    const API_URL = 'https://my.demio.com/api/v1/';
 
     /**
-     * HTTP client to be used to make requests to API.
-     * 
-     * @var Client
+     * @var Client $httpClient The HTTP client
      */
-    protected $httpClient;
+    protected Client $httpClient;
 
     /**
-     * Extension settings.
-     * 
-     * @var array
+     * @var array $settings The extension settings
      */
-    protected $settings;
+    protected mixed $settings;
+
+    protected mixed $headers;
 
     /**
-     * Constructor method to instantiate the class.
-     * It initializes the HTTP client and loads the extension settings.
+     * DemioService constructor.
      */
     public function __construct()
-    {   
+    {
         $this->httpClient = new Client();
         $extensionConfiguration = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class);
-        $this->settings = $extensionConfiguration->get('t3_demio');
+        $this->settings = $extensionConfiguration->get('demio');
+        $this->headers = [
+            'Api-Key'      => $this->settings['key'],
+            'Api-Secret'   => $this->settings['secret'],
+            'Content-Type' => 'application/json'
+        ];
     }
 
     /**
-     * Method to fetch event data from API.
-     * It takes an optional parameter 'type' to filter events by type.
-     * It returns an array of event data on success and throws an exception on failure.
-     * 
-     * @param string $type
-     * 
+     * Fetches events from the Demio API
+     *
+     * @param string $type The type of events to fetch
+     *
      * @return mixed
-     * 
-     * @throws \RuntimeException
+     * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function fetchEventsFromApi(string $type = 'all'): mixed
+    public function fetchEventsFromApi(string $type = ''): mixed
     {
-        // Set API request headers.
-        $headers = [
-            'Api-Key' => $this->settings['API_KEY'],
-            'Api-Secret' => $this->settings['API_SECRET'],
-            'Content-Type' => 'application/json'
-        ];
+        $response = $this->httpClient->request('GET', self::API_URL . 'events?type=' . $type, [
+            'headers' => $this->headers
+        ]);
+        $statusCode = $response->getStatusCode();
 
-        // Make GET request to API using Guzzle.
-        $response = $this->httpClient->request('GET', self::API_URL, [
-            'headers' => $headers
+        if ($statusCode === 200) {
+            return json_decode($response->getBody(), true);
+        } else {
+            $error = 'API request failed with status code ' . $statusCode;
+            $this->logger->error($error);
+            throw new \RuntimeException($error);
+        }
+    }
+
+    /**
+     * Fetches a single event from the demio API
+     *
+     * @param Integer $id
+     * @param bool    $active
+     *
+     * @return mixed
+     * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
+     */
+    public function fetchEventFromApi(int $id, bool $active = true): mixed
+    {
+        $response = $this->httpClient->request('GET', self::API_URL.'event/' . $id . '?active=' . $active, [
+            'headers' => $this->headers
         ]);
 
         // Check the status code of the response.
         $statusCode = $response->getStatusCode();
+
         if ($statusCode === 200) {
-            // If status code is 200, parse the response data and return it.
-            $responseData = json_decode($response->getBody(), true);
-            return $responseData;
+            return json_decode($response->getBody(), true);
         } else {
-            // If status code is not 200, log an error and throw an exception.
-            $this->logger->error('API request failed with status code ' . $statusCode);
-            throw new \RuntimeException('API request failed with status code ' . $statusCode);
+            $error = 'API request failed with status code ' . $statusCode;
+            $this->logger->error($error);
+            throw new \RuntimeException($error);
         }
     }
+
 }

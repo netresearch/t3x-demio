@@ -1,4 +1,4 @@
 # cat=API; type=string; label=API Key: enter from Demio
-API_KEY = 
+key =
 # cat=API; type=string; label=API Secret: enter from Demio
-API_SECRET =
+secret =

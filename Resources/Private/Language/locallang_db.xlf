@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:demio/Resources/Private/Language/locallang_db.xlf" date="2023-02-16T22:14:29Z" product-name="demio">
+		<header/>
+		<body>
+			<trans-unit id="tx_demio_domain_model_event" resname="tx_demio_domain_model_event">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_demio_domain_model_event.name" resname="tx_demio_domain_model_event.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_demio_list.name" resname="tx_demio_list.name">
+				<source>Demio: List</source>
+			</trans-unit>
+			<trans-unit id="tx_demio_list.description" resname="tx_demio_list.description">
+				<source>List of Demio events</source>
+			</trans-unit>
+			<trans-unit id="tx_demio_single.name" resname="tx_demio_single.name">
+				<source>Demio: Single</source>
+			</trans-unit>
+			<trans-unit id="tx_demio_single.description" resname="tx_demio_single.description">
+				<source>Display a single event</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

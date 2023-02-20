@@ -1,0 +1,28 @@
+plugin.tx_demio_list {
+    view {
+        # cat=plugin.tx_demio_list/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:demio/Resources/Private/Templates/
+        # cat=plugin.tx_demio_list/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:demio/Resources/Private/Partials/
+        # cat=plugin.tx_demio_list/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:demio/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_demio_list//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
+plugin.tx_demio_single {
+    view {
+        # cat=plugin.tx_demio_single/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:demio/Resources/Private/Templates/
+        # cat=plugin.tx_demio_single/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:demio/Resources/Private/Partials/
+        # cat=plugin.tx_demio_single/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:demio/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_demio_single//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

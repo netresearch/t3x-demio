@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- EXT:examples/Resources/Private/Language/locallang.xlf -->
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-03-09T18:44:59Z" product-name="examples">
+		<header />
+		<body>
+			<trans-unit id="plugin.list.sheetTitle" xml:space="preserve">
+				<source>
+					Listing Configuration
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.type" xml:space="preserve">
+				<source>
+					Filter by
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.type.description" xml:space="preserve">
+				<source>
+					Only list events of a certain type
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.type.all" xml:space="preserve">
+				<source>
+					List all events
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.type.upcoming" xml:space="preserve">
+				<source>
+					List upcoming events only
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.type.past" xml:space="preserve">
+				<source>
+					List past events only
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.type.automated" xml:space="preserve">
+				<source>
+					List automated events only
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.showDescription" xml:space="preserve">
+				<source>
+					Show description
+				</source>
+			</trans-unit>
+			<trans-unit id="plugin.list.settings.showDescription.description" xml:space="preserve">
+				<source>
+					Wether to show the description of the event in the list view
+				</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
