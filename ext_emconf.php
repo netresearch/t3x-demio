@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Demio',
+    'title' => 'T3Demio',
     'description' => 'This extension provides a plugin for the TYPO3 CMS to integrate Demio webinars into your TYPO3 website.',
     'category' => 'plugin',
     'author' => 'André Lademann, Philipp Madl',
@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'Netresearch\\Demio\\' => 'Classes/',
+            'Netresearch\\T3Demio\\' => 'Classes/',
         ],
     ],
 ];

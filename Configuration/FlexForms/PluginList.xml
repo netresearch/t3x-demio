@@ -7,40 +7,40 @@
         <sDEF>
             <ROOT>
                 <TCEforms>
-                <sheetTitle>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.sheetTitle</sheetTitle>
+                <sheetTitle>LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.sheetTitle</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
                     <settings.type>
-                        <label>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type</label>
-                        <description>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.description</description>
+                        <label>LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type</label>
+                        <description>LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.description</description>
 
                         <config>
                             <type>select</type>
                             <renderType>selectSingle</renderType>
                             <items>
                                 <numIndex index="0">
-                                    <numIndex index="0">LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.all</numIndex>
+                                    <numIndex index="0">LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.all</numIndex>
                                     <numIndex index="1"></numIndex>
                                 </numIndex>
                                 <numIndex index="1">
-                                    <numIndex index="0">LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.upcoming</numIndex>
+                                    <numIndex index="0">LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.upcoming</numIndex>
                                     <numIndex index="1">upcoming</numIndex>
                                 </numIndex>
                                 <numIndex index="2">
-                                    <numIndex index="0">LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.past</numIndex>
+                                    <numIndex index="0">LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.past</numIndex>
                                     <numIndex index="1">past</numIndex>
                                 </numIndex>
                                 <numIndex index="3">
-                                    <numIndex index="0">LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.automated</numIndex>
+                                    <numIndex index="0">LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.type.automated</numIndex>
                                     <numIndex index="1">automated</numIndex>
                                 </numIndex>
                             </items>
                         </config>
                     </settings.type>
                     <settings.showDescription>
-                        <label>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription</label>
-                        <description>LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription.description</description>
+                        <label>LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription</label>
+                        <description>LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription.description</description>
                         <config>
                             <type>check</type>
                             <renderType>checkboxToggle</renderType>

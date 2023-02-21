@@ -1,5 +1,5 @@
 {
-    "name": "netresearch/demio",
+    "name": "netresearch/t3-demio",
     "type": "typo3-cms-extension",
     "description": "This extension provides a plugin for the TYPO3 CMS to integrate Demio webinars into your TYPO3 website.",
 	"authors": [
@@ -21,12 +21,12 @@
 	},
     "autoload": {
         "psr-4": {
-            "Netresearch\\Demio\\": "Classes"
+            "Netresearch\\T3Demio\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Netresearch\\Demio\\Tests\\": "Tests"
+            "Netresearch\\T3Demio\\Tests\\": "Tests"
         }
     },
     "replace": {
@@ -44,7 +44,7 @@
     "extra": {
         "typo3/cms": {
             "web-dir": ".Build/public",
-            "extension-key": "demio"
+            "extension-key": "t3_demio"
         }
     }
 }

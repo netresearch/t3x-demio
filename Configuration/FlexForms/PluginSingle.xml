@@ -6,13 +6,13 @@
         <sDEF>
             <ROOT>
                 <sheetTitle>
-                    LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.sheetTitle
+                    LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.sheetTitle
                 </sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.type>
                         <label>
-                            LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type
+                            LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type
                         </label>
                         <config>
                             <type>select</type>
@@ -20,25 +20,25 @@
                             <items>
                                 <numIndex index="0">
                                     <numIndex index="0">
-                                        LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.all
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.all
                                     </numIndex>
                                     <numIndex index="1"></numIndex>
                                 </numIndex>
                                 <numIndex index="1">
                                     <numIndex index="0">
-                                        LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.upcoming
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.upcoming
                                     </numIndex>
                                     <numIndex index="1">upcoming</numIndex>
                                 </numIndex>
                                 <numIndex index="2">
                                     <numIndex index="0">
-                                        LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.past
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.past
                                     </numIndex>
                                     <numIndex index="1">past</numIndex>
                                 </numIndex>
                                 <numIndex index="3">
                                     <numIndex index="0">
-                                        LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.automated
+                                        LLL:EXT:t3_demio/Resources/Private/Language/locallang_flexform.xlf:plugin.single.settings.type.automated
                                     </numIndex>
                                     <numIndex index="1">automated</numIndex>
                                 </numIndex>

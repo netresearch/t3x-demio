@@ -18,16 +18,16 @@ defined('TYPO3') or die();
 // List plugin
 // ==============================
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Demio',
+    'Netresearch.T3Demio',
     'List',
-    'LLL:EXT:demio/Resources/Private/Language/locallang.xlf:plugin.list.title',
-    'EXT:demio/Resources/Public/Icons/Icon.png'
+    'LLL:EXT:t3_demio/Resources/Private/Language/locallang.xlf:plugin.list.title',
+    'EXT:t3_demio/Resources/Public/Icons/Icon.png'
 );
-$pluginSignature = 'demio_list';
+$pluginSignature = 't3demio_list';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:demio/Configuration/FlexForms/PluginList.xml'
+    'FILE:EXT:t3_demio/Configuration/FlexForms/PluginList.xml'
 );
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'pages,layout,select_key,recursive';
 
@@ -35,15 +35,15 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSi
 // Single plugin
 // ==============================
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Demio',
+    'Netresearch.T3Demio',
     'Single',
-    'LLL:EXT:demio/Resources/Private/Language/locallang.xlf:plugin.single.title',
-    'EXT:demio/Resources/Public/Icons/Icon.png'
+    'LLL:EXT:t3_demio/Resources/Private/Language/locallang.xlf:plugin.single.title',
+    'EXT:t3_demio/Resources/Public/Icons/Icon.png'
 );
-$pluginSignature = 'demio_single';
+$pluginSignature = 't3demio_single';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:demio/Configuration/FlexForms/PluginSingle.xml'
+    'FILE:EXT:t3_demio/Configuration/FlexForms/PluginSingle.xml'
 );
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'pages,recursive';

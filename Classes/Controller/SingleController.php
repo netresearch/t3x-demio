@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Netresearch\Demio\Controller;
+namespace Netresearch\T3Demio\Controller;
 
-use Netresearch\Demio\Service\DemioService;
-use phpDocumentor\Reflection\Types\Integer;
+use GuzzleHttp\Exception\GuzzleException;
+use Netresearch\T3Demio\Service\DemioService;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
 
 
 /**
@@ -22,38 +23,20 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * EventController
  */
-class EventController extends ActionController
+class SingleController extends ActionController
 {
-
-    /**
-     * @param DemioService $demioService
-     */
-    public function __construct(private readonly DemioService $demioService){}
-
-    /**
-     * action list
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
-    {
-        $events = $this->demioService->fetchEventsFromApi($this->settings['type']);
-
-        // Use TYPO3 cache framework to cache the events
-
-
-
-
-        $this->view->assign('events', $events);
-        return $this->htmlResponse();
-    }
+    public function __construct(
+        private readonly DemioService $demioService
+    ) {}
 
     /**
      * action show
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
+     * @throws GuzzleException
+     * @throws NoSuchArgumentException
      */
-    public function showAction(): \Psr\Http\Message\ResponseInterface
+    public function showAction(): ResponseInterface
     {
         if($this->request->hasArgument('event')) {
             $id = (int) $this->request->getArgument('event')['id'];

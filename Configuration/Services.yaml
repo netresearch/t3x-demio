@@ -3,9 +3,12 @@ services:
     autowire: true
     autoconfigure: true
     public: false
-  Netresearch\Demio\:
+  Netresearch\T3Demio\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
-  Netresearch\Demio\Controller\EventController:
+  Netresearch\T3Demio\Controller\ListController:
     arguments:
-      $demioService: '@Netresearch\Demio\Service\DemioService'
+      $demioService: '@Netresearch\T3Demio\Service\DemioService'
+  Netresearch\T3Demio\Controller\SingleController:
+    arguments:
+      $demioService: '@Netresearch\T3Demio\Service\DemioService'
