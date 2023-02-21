@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Netresearch\T3Demio\Controller;
+namespace Netresearch\Demio\Controller;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Netresearch\T3Demio\Service\DemioService;
+use Netresearch\Demio\Service\DemioService;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;

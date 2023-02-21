@@ -18,16 +18,16 @@ defined('TYPO3') or die();
 // List plugin
 // ==============================
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Netresearch.T3Demio',
+    'Netresearch.Demio',
     'List',
-    'LLL:EXT:t3_demio/Resources/Private/Language/locallang.xlf:plugin.list.title',
-    'EXT:t3_demio/Resources/Public/Icons/Icon.png'
+    'LLL:EXT:demio/Resources/Private/Language/locallang.xlf:plugin.list.title',
+    'EXT:demio/Resources/Public/Icons/Icon.png'
 );
-$pluginSignature = 't3demio_list';
+$pluginSignature = 'demio_list';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:t3_demio/Configuration/FlexForms/PluginList.xml'
+    'FILE:EXT:demio/Configuration/FlexForms/PluginList.xml'
 );
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'pages,layout,select_key,recursive';
 
@@ -35,15 +35,15 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSi
 // Single plugin
 // ==============================
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Netresearch.T3Demio',
+    'Netresearch.Demio',
     'Single',
-    'LLL:EXT:t3_demio/Resources/Private/Language/locallang.xlf:plugin.single.title',
-    'EXT:t3_demio/Resources/Public/Icons/Icon.png'
+    'LLL:EXT:demio/Resources/Private/Language/locallang.xlf:plugin.single.title',
+    'EXT:demio/Resources/Public/Icons/Icon.png'
 );
-$pluginSignature = 't3demio_single';
+$pluginSignature = 'demio_single';
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
     $pluginSignature,
-    'FILE:EXT:t3_demio/Configuration/FlexForms/PluginSingle.xml'
+    'FILE:EXT:demio/Configuration/FlexForms/PluginSingle.xml'
 );
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'pages,recursive';

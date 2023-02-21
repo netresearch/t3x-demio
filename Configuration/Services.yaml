@@ -3,12 +3,12 @@ services:
     autowire: true
     autoconfigure: true
     public: false
-  Netresearch\T3Demio\:
+  Netresearch\Demio\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
-  Netresearch\T3Demio\Controller\ListController:
+  Netresearch\Demio\Controller\ListController:
     arguments:
-      $demioService: '@Netresearch\T3Demio\Service\DemioService'
-  Netresearch\T3Demio\Controller\SingleController:
+      $demioService: '@Netresearch\Demio\Service\DemioService'
+  Netresearch\Demio\Controller\SingleController:
     arguments:
-      $demioService: '@Netresearch\T3Demio\Service\DemioService'
+      $demioService: '@Netresearch\Demio\Service\DemioService'

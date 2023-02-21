@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="messages" date="2023-01-27T17:38:32Z"
-        product-name="t3-demio">
+        product-name="demio">
         <header/>
         <body>
             <trans-unit id="extension.title">

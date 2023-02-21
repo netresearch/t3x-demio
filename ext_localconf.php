@@ -4,26 +4,26 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Netresearch.T3Demio',
+        'Netresearch.Demio',
         'List',
         [
-            \Netresearch\T3Demio\Controller\ListController::class => 'list'
+            \Netresearch\Demio\Controller\ListController::class => 'list'
         ],
         // non-cacheable actions
         [
-            \Netresearch\T3Demio\Controller\ListController::class => 'list'
+            \Netresearch\Demio\Controller\ListController::class => 'list'
         ]
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Netresearch.T3Demio',
+        'Netresearch.Demio',
         'Single',
         [
-            \Netresearch\T3Demio\Controller\SingleController::class => 'show'
+            \Netresearch\Demio\Controller\SingleController::class => 'show'
         ],
         // non-cacheable actions
         [
-            \Netresearch\T3Demio\Controller\SingleController::class => 'show'
+            \Netresearch\Demio\Controller\SingleController::class => 'show'
         ]
     );
 
@@ -34,20 +34,20 @@ defined('TYPO3_MODE') || die('Access denied.');
                 elements {
                     list {
                         iconIdentifier = demio-plugin-list
-                        title = LLL:EXT:t3_demio/Resources/Private/Language/locallang_db.xlf:tx_demio_list.name
-                        description = LLL:EXT:t3_demio/Resources/Private/Language/locallang_db.xlf:tx_demio_list.description
+                        title = LLL:EXT:demio/Resources/Private/Language/locallang_db.xlf:tx_demio_list.name
+                        description = LLL:EXT:demio/Resources/Private/Language/locallang_db.xlf:tx_demio_list.description
                         tt_content_defValues {
                             CType = list
-                            list_type = t3demio_list
+                            list_type = demio_list
                         }
                     }
                     single {
                         iconIdentifier = demio-plugin-single
-                        title = LLL:EXT:t3_demio/Resources/Private/Language/locallang_db.xlf:tx_demio_single.name
-                        description = LLL:EXT:t3_demio/Resources/Private/Language/locallang_db.xlf:tx_demio_single.description
+                        title = LLL:EXT:demio/Resources/Private/Language/locallang_db.xlf:tx_demio_single.name
+                        description = LLL:EXT:demio/Resources/Private/Language/locallang_db.xlf:tx_demio_single.description
                         tt_content_defValues {
                             CType = list
-                            list_type = t3demio_single
+                            list_type = demio_single
                         }
                     }
                 }

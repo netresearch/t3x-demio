@@ -17,7 +17,7 @@ This extension provides a plugin for the TYPO3 CMS to integrate Demio webinars i
 
 ### Installation using Composer
 
-The recommended way to install the extension is by using [Composer](https://getcomposer.org/). In your Composer based TYPO3 project root, just do `composer require netresearch/t3-demio`. This will download and install the extension.
+The recommended way to install the extension is by using [Composer](https://getcomposer.org/). In your Composer based TYPO3 project root, just do `composer require netresearch/demio`. This will download and install the extension.
 
 ### Installation as extension from TYPO3 Extension Repository (TER)
 

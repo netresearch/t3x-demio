@@ -1,14 +1,14 @@
-plugin.tx_t3demio_list {
+plugin.tx_demio_list {
     view {
         templateRootPaths.0 = EXT:demio/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_t3demio_list.view.templateRootPath}
+        templateRootPaths.1 = {$plugin.tx_demio_list.view.templateRootPath}
         partialRootPaths.0 = EXT:demio/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_t3demio_list.view.partialRootPath}
+        partialRootPaths.1 = {$plugin.tx_demio_list.view.partialRootPath}
         layoutRootPaths.0 = EXT:demio/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_t3demio_list.view.layoutRootPath}
+        layoutRootPaths.1 = {$plugin.tx_demio_list.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_t3demio_list.persistence.storagePid}
+        storagePid = {$plugin.tx_demio_list.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -20,17 +20,17 @@ plugin.tx_t3demio_list {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
-plugin.tx_t3demio_single {
+plugin.tx_demio_single {
     view {
-        templateRootPaths.0 = EXT:t3_demio/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_t3demio_single.view.templateRootPath}
-        partialRootPaths.0 = EXT:t3_demio/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_t3demio_single.view.partialRootPath}
-        layoutRootPaths.0 = EXT:t3_demio/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_t3demio_single.view.layoutRootPath}
+        templateRootPaths.0 = EXT:demio/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_demio_single.view.templateRootPath}
+        partialRootPaths.0 = EXT:demio/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_demio_single.view.partialRootPath}
+        layoutRootPaths.0 = EXT:demio/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_demio_single.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_t3demio_single.persistence.storagePid}
+        storagePid = {$plugin.tx_demio_single.persistence.storagePid}
         #recursive = 1
     }
     features {
@@ -44,7 +44,7 @@ plugin.tx_t3demio_single {
 }
 
 # these classes are only used in auto-generated templates
-plugin.tx_t3demio._CSS_DEFAULT_STYLE (
+plugin.tx_demio._CSS_DEFAULT_STYLE (
     textarea.f3-form-error {
         background-color: #FF9F9F;
         border: 1px #FF0000 solid;

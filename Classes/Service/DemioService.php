@@ -1,6 +1,6 @@
 <?php
 
-namespace Netresearch\T3Demio\Service;
+namespace Netresearch\Demio\Service;
 
 use GuzzleHttp\Client;
 use phpDocumentor\Reflection\Types\Integer;
@@ -45,7 +45,7 @@ class DemioService implements LoggerAwareInterface
     {
         $this->httpClient = new Client();
         $extensionConfiguration = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class);
-        $this->settings = $extensionConfiguration->get('t3_demio');
+        $this->settings = $extensionConfiguration->get('demio');
         $this->headers = [
             'Api-Key'      => $this->settings['key'],
             'Api-Secret'   => $this->settings['secret'],
