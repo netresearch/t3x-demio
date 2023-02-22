@@ -10,9 +10,7 @@ defined('TYPO3_MODE') || die('Access denied.');
             \Netresearch\Demio\Controller\ListController::class => 'list'
         ],
         // non-cacheable actions
-        [
-            \Netresearch\Demio\Controller\ListController::class => 'list'
-        ]
+        []
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -22,9 +20,7 @@ defined('TYPO3_MODE') || die('Access denied.');
             \Netresearch\Demio\Controller\SingleController::class => 'show'
         ],
         // non-cacheable actions
-        [
-            \Netresearch\Demio\Controller\SingleController::class => 'show'
-        ]
+        []
     );
 
     // wizards
