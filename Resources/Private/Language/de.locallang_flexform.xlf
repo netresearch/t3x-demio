@@ -1,69 +1,70 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!-- EXT:examples/Resources/Private/Language/locallang.xlf -->
+	<!-- EXT:examples/Retargets/Private/Language/locallang.xlf -->
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2022-03-09T18:44:59Z" product-name="examples">
-		<header />
+	<file target-language="en" datatype="plaintext" original="messages" date="2022-03-09T18:44:59Z"
+		  product-name="examples">
+		<header/>
 		<body>
 			<trans-unit id="plugin.list.sheetTitle" xml:space="preserve">
-				<source>
-					Listing Configuration
-				</source>
+				<target>
+					Auflistung konfigurieren
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.type" xml:space="preserve">
-				<source>
-					Filter by
-				</source>
+				<target>
+					Filtern nach
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.type.description" xml:space="preserve">
-				<source>
-					Only list events of a certain type
-				</source>
+				<target>
+					Nur Ereignisse eines bestimmten Typs auflisten
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.type.all" xml:space="preserve">
-				<source>
-					List all events
-				</source>
+				<target>
+					Alle Ereignisse auflisten
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.type.upcoming" xml:space="preserve">
-				<source>
-					List upcoming events only
-				</source>
+				<target>
+					Nur bevorstehende Ereignisse auflisten
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.type.past" xml:space="preserve">
-				<source>
-					List past events only
-				</source>
+				<target>
+					Nur vergangene Ereignisse auflisten
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.type.automated" xml:space="preserve">
-				<source>
-					List automated events only
-				</source>
+				<target>
+					Nur automatisierte Ereignisse auflisten
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.showDescription" xml:space="preserve">
-				<source>
-					Show description
-				</source>
+				<target>
+					Beschreibung anzeigen
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.list.settings.showDescription.description" xml:space="preserve">
-				<source>
-					Show description of the webinar in the list view
-				</source>
+				<target>
+					Beschreibung des Webinares in der Listenansicht anzeigen
+				</target>
 			</trans-unit>
 
 			<trans-unit id="plugin.single.sheetTitle" xml:space="preserve">
-				<source>
-					Single event configuration
-				</source>
+				<target>
+					Konfiguration einzelner Ereignisse
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.single.settings.event" xml:space="preserve">
-				<source>
-					Select an event
-				</source>
+				<target>
+					Wählen Sie ein Ereignis
+				</target>
 			</trans-unit>
 			<trans-unit id="plugin.single.settings.event.description" xml:space="preserve">
-				<source>
-					Select an event to show
-				</source>
+				<target>
+					Wählen Sie ein Ereignis zum Anzeigen
+				</target>
 			</trans-unit>
 
 		</body>

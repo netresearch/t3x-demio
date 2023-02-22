@@ -4,33 +4,39 @@
 <f:section name="content">
     <f:flashMessages/>
     <f:if condition="{event}">
-        <h1>{id}</h1>
-        <f:render partial="Event/Properties" arguments="{event:event}"/>
-        {event.description -> f:format.html()}
-        <f:render partial="Event/Cta" arguments="{event:event}"/>
-        <p>
-            <f:link.action action="list">Back to list</f:link.action>
-        </p>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">{event.name}</div>
+                <div class="card-text">{event.description -> f:format.html()}</div>
+            </div>
+            <f:if condition="{event.dates}">
+                <p class="h4 mx-3">
+                    <f:translate key="webinars"/>
+                </p>
 
-        <h2>Upcoming events</h2>
-        <f:for each="{event.dates}" as="date">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Status</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <f:format.date format="%H:%m - %d. %B %Y">{date.timestamp}</f:format.date>
-                    </td>
-                    <td>{date.status}</td>
-                </tr>
-                </tbody>
-            </table>
-        </f:for>
+                <ul class="list-group list-group-flush">
+                    <f:for each="{event.dates}" as="date">
+                        <li class="list-group-item">
+                            <f:format.date format="%H:%m - %d. %B %Y">{date.timestamp}</f:format.date>
+                            , {date.zone},
+                            <em>
+                                <f:translate key="status"/>
+                                : {date.status}</em>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:if>
+
+            <div class="card-body">
+                <f:render partial="Event/Cta" arguments="{event:event, class: 'card-link'}"/>
+                <f:if condition="{showBackLink}">
+                    <f:link.action action="list" class="card-link">
+                        <f:translate key="backlinkList"/>
+                    </f:link.action>
+                </f:if>
+            </div>
+
+        </div>
     </f:if>
 </f:section>
 </html>

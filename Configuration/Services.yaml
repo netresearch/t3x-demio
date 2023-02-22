@@ -3,6 +3,7 @@ services:
     autowire: true
     autoconfigure: true
     public: false
+
   Netresearch\Demio\:
     resource: '../Classes/*'
     exclude: '../Classes/Domain/Model/*'
@@ -12,6 +13,7 @@ services:
   Netresearch\Demio\Controller\SingleController:
     arguments:
       $demioService: '@Netresearch\Demio\Service\DemioService'
+
   dashboard.widget.demioBlog:
     class: 'TYPO3\CMS\Dashboard\Widgets\RssWidget'
     arguments:

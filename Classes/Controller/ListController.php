@@ -35,10 +35,9 @@ class ListController extends ActionController
      */
     public function listAction(): ResponseInterface
     {
-        $events = $this->demioService->fetchEventsFromApi($this->settings['type']);
+        $events = $this->demioService->fetchEvents($this->settings['type']);
 
         // Use TYPO3 cache framework to cache the events
-
         $this->view->assign('events', $events);
         return $this->htmlResponse();
     }

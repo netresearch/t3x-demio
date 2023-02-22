@@ -17,6 +17,16 @@
 			<trans-unit id="details">
 				<source>details</source>
 			</trans-unit>
+			<trans-unit id="webinars">
+				<source>Webinars</source>
+			</trans-unit>
+			<trans-unit id="backlinkList">
+				<source>Back to list</source>
+			</trans-unit>
+			<trans-unit id="status">
+				<source>Status</source>
+			</trans-unit>
+
 			<trans-unit id="dashboard.preset.title">
 				<source>Demio Analytics</source>
 			</trans-unit>

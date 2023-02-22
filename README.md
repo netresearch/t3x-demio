@@ -1,5 +1,9 @@
 
-# T3 Demio
+# TYPO3 Demio
+
+[![Latest Stable Version](https://poser.pugx.org/netresearch/demio/v/stable)](https://packagist.org/packages/netresearch/demio)
+[![Total Downloads](https://poser.pugx.org/netresearch/demio/downloads)](https://packagist.org/packages/netresearch/demio)
+[![License](https://poser.pugx.org/netresearch/demio/license)](https://packagist.org/packages/netresearch/demio)
 
 ## Introduction
 
@@ -7,11 +11,12 @@ This extension provides a plugin for the TYPO3 CMS to integrate Demio webinars i
 
 ### Features
 
-* [ ] List all webinars
-* [ ] List all upcoming webinars
-* [ ] List all past webinars
-* [ ] List all automated webinars
-* [ ] Show a single webinar
+* [x] List all webinars
+* [x] List all upcoming webinars
+* [x] List all past webinars
+* [x] List all automated webinars
+* [x] Show a single webinar
+* [ ] Cache API responses in TYPO3 cache
 
 ## Installation
 

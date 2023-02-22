@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2023-01-27T17:38:32Z"
+    <file target-language="en" datatype="plaintext" original="messages" date="2023-01-27T17:38:32Z"
         product-name="demio">
         <header/>
         <body>
@@ -10,6 +10,33 @@
             <trans-unit id="plugin.list.title">
                 <target>Demio: Webinare auflisten</target>
             </trans-unit>
+
+			<trans-unit id="register">
+				<target>Anmelden</target>
+			</trans-unit>
+			<trans-unit id="details">
+				<target>Details</target>
+			</trans-unit>
+			<trans-unit id="webinars">
+				<target>Webinare</target>
+			</trans-unit>
+			<trans-unit id="backlinkList">
+				<target>Zurück zur Liste</target>
+			</trans-unit>
+			<trans-unit id="status">
+				<target>Status</target>
+			</trans-unit>
+
+			<trans-unit id="dashboard.preset.title">
+				<target>Demio Analytics</target>
+			</trans-unit>
+			<trans-unit id="dashboard.preset.description">
+				<target>Dashboard mit vorkonfigurierten Widgets für Ihre Demio-Anlaysen</target>
+			</trans-unit>
+			<trans-unit id="widgets.button.title">
+				<target>Demio Backend</target>
+			</trans-unit>
+
         </body>
     </file>
 </xliff>

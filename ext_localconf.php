@@ -61,6 +61,13 @@ defined('TYPO3_MODE') || die('Access denied.');
         'options.dashboard.dashboardPresetsForNewUsers = default, demioPreset'
     );
 
+    // Custom TCA fields
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1677100495] = [
+        'nodeName' => 'selectEvent',
+        'priority' => 40,
+        'class' => \Netresearch\Demio\Form\Element\SelectEvent::class,
+    ];
+
 
 })();
 

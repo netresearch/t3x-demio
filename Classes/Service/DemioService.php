@@ -61,7 +61,7 @@ class DemioService implements LoggerAwareInterface
      * @return mixed
      * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function fetchEventsFromApi(string $type = ''): mixed
+    public function fetchEvents(string $type = ''): mixed
     {
         $response = $this->httpClient->request('GET', self::API_URL . 'events?type=' . $type, [
             'headers' => $this->headers
@@ -86,7 +86,7 @@ class DemioService implements LoggerAwareInterface
      * @return mixed
      * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function fetchEventFromApi(int $id, bool $active = true): mixed
+    public function fetchEvent(int $id, bool $active = true): mixed
     {
         $response = $this->httpClient->request('GET', self::API_URL.'event/' . $id . '?active=' . $active, [
             'headers' => $this->headers

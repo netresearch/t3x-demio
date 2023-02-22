@@ -38,12 +38,16 @@ class SingleController extends ActionController
      */
     public function showAction(): ResponseInterface
     {
+        // If the url contains an event id, fetch the event from the api and assign it to the view
         if($this->request->hasArgument('event')) {
             $id = (int) $this->request->getArgument('event')['id'];
-            $event = $this->demioService->fetchEventFromApi($id);
+            $event = $this->demioService->fetchEvent($id);
+            $this->view->assign('showBackLink', true);
             $this->view->assign('event', $event);
         } else {
-            $this->view->assign('event', null);
+            $id = (int) $this->settings['event'];
+            $event = $this->demioService->fetchEvent($id);
+            $this->view->assign('event', $event);
         }
         return $this->htmlResponse();
     }
