@@ -17,6 +17,15 @@
 			<trans-unit id="details">
 				<source>details</source>
 			</trans-unit>
+			<trans-unit id="dashboard.preset.title">
+				<source>Demio Analytics</source>
+			</trans-unit>
+			<trans-unit id="dashboard.preset.description">
+				<source>Dashboard with preconfigured widgets for your Demio anlayses</source>
+			</trans-unit>
+			<trans-unit id="widgets.button.title">
+				<source>Demio Backend</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

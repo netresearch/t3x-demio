@@ -56,6 +56,11 @@ defined('TYPO3_MODE') || die('Access denied.');
        }'
     );
 
+    // Set default dashboard preset
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
+        'options.dashboard.dashboardPresetsForNewUsers = default, demioPreset'
+    );
+
 
 })();
 

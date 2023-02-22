@@ -12,3 +12,27 @@ services:
   Netresearch\Demio\Controller\SingleController:
     arguments:
       $demioService: '@Netresearch\Demio\Service\DemioService'
+  dashboard.widget.demioBlog:
+    class: 'TYPO3\CMS\Dashboard\Widgets\RssWidget'
+    arguments:
+      $view: "@dashboard.views.widget"
+      $cache: "@cache.dashboard.rss"
+      $options:
+        feedUrl: "https://learn.demio.com/feed/"
+    tags:
+      - name: dashboard.widget
+        identifier: demioBlog
+        groupNames: DemioWidgetGroup
+        title: "Demio blog"
+        description: "News from demio.com."
+        iconIdentifier: "content-widget-rss"
+        height: "medium"
+        width: "medium"
+
+  dashboard.widgets.demioDashboardButton:
+    class: 'TYPO3\CMS\Dashboard\Widgets\Provider\ButtonProvider'
+    arguments:
+      $title: "LLL:EXT:demio/Resources/Private/Language/locallang.xlf:widgets.button.title"
+      $link: "https://my.demio.com"
+      $target: "_blank"
+
