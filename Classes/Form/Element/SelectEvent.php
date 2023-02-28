@@ -9,6 +9,12 @@ use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+/**
+ * Class SelectEvent
+ *
+ * @author  Andreas Müller <andreas.mueller@netresearch.de>
+ * @link    https://www.netresearch.de
+ */
 class SelectEvent extends AbstractFormElement
 {
     /**
@@ -17,7 +23,7 @@ class SelectEvent extends AbstractFormElement
      * @return array
      * @throws GuzzleException
      */
-    public function render():array
+    public function render(): array
     {
         // Get events from API
         $demioService = GeneralUtility::makeInstance(DemioService::class);

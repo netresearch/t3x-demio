@@ -25,18 +25,23 @@ use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
  */
 class SingleController extends ActionController
 {
-    public function __construct(
-        private readonly DemioService $demioService
-    ) {}
+    private DemioService  $demioService;
+
+    /**
+     * @param DemioService $demioService
+     */
+    public function __construct(DemioService $demioService)
+    {
+        $this->demioService = $demioService;
+    }
 
     /**
      * action show
      *
-     * @return ResponseInterface
      * @throws GuzzleException
      * @throws NoSuchArgumentException
      */
-    public function showAction(): ResponseInterface
+    public function showAction()
     {
         // If the url contains an event id, fetch the event from the api and assign it to the view
         if($this->request->hasArgument('event')) {
@@ -49,7 +54,6 @@ class SingleController extends ActionController
             $event = $this->demioService->fetchEvent($id);
             $this->view->assign('event', $event);
         }
-        return $this->htmlResponse();
     }
 
 }

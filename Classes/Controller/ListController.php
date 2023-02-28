@@ -23,24 +23,23 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  */
 class ListController extends ActionController
 {
-    public function __construct(
-        private readonly DemioService $demioService
-    ) {}
+    private DemioService $demioService;
+
+    public function __construct(DemioService $demioService)
+    {
+        $this->demioService = $demioService;
+    }
 
     /**
      * action list
      *
-     * @return ResponseInterface
      * @throws GuzzleException
      */
-    public function listAction(): ResponseInterface
+    public function listAction()
     {
         $events = $this->demioService->fetchEvents($this->settings['type']);
 
         // Use TYPO3 cache framework to cache the events
         $this->view->assign('events', $events);
-        return $this->htmlResponse();
     }
-
-
 }
