@@ -46,7 +46,7 @@
                             <renderType>checkboxToggle</renderType>
                             <items type="array">
                                 <numIndex index="0">
-                                    <numIndex index="0">Show description</numIndex>
+                                    <numIndex index="0">LLL:EXT:demio/Resources/Private/Language/locallang_flexform.xlf:plugin.list.settings.showDescription</numIndex>
                                     <numIndex index="1">true</numIndex>
                                 </numIndex>
                             </items>
