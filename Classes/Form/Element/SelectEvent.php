@@ -8,6 +8,7 @@ use Netresearch\Demio\Service\DemioService;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * Class SelectEvent
@@ -33,10 +34,12 @@ class SelectEvent extends AbstractFormElement
         $html[] = '<select class="form-select form-control-adapt" name="' . $this->data['parameterArray']['itemFormElName'] . '">';
 
         foreach ($events as $event) {
-            if ($event['id'] ===  (int) $this->data['parameterArray']['itemFormElValue']) {
-                $html[] = '<option value="' . $event['id'] . '" selected>' . $event['name'] . ' ['. $event['id'] .']</option>';
-            } else {
-                $html[] = '<option value="' . $event['id'] . '">' . $event['name'] . ' ['. $event['id'] .']</option>';
+            if ($event['status'] !== 'finished') {
+                if ($event['id'] ===  (int) $this->data['parameterArray']['itemFormElValue']) {
+                    $html[] = '<option value="' . $event['id'] . '" selected>' . $event['name'] . ' ['. $event['id'] .']</option>';
+                } else {
+                    $html[] = '<option value="' . $event['id'] . '">' . $event['name'] . ' ['. $event['id'] .']</option>';
+                }
             }
         }
         $html[] = '</select>';
