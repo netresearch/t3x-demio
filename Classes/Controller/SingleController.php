@@ -37,23 +37,22 @@ class SingleController extends ActionController
 
     /**
      * action show
-     *
-     * @throws GuzzleException
-     * @throws NoSuchArgumentException
      */
     public function showAction()
     {
         // If the url contains an event id, fetch the event from the api and assign it to the view
-        if($this->request->hasArgument('event')) {
+        if ($this->request->hasArgument('event')) {
             $id = (int) $this->request->getArgument('event')['id'];
-            $event = $this->demioService->fetchEvent($id);
             $this->view->assign('showBackLink', true);
-            $this->view->assign('event', $event);
         } else {
             $id = (int) $this->settings['event'];
+        }
+
+        try {
             $event = $this->demioService->fetchEvent($id);
             $this->view->assign('event', $event);
+        } catch (GuzzleException $e) {
+            $this->view->assign('event', null);
         }
     }
-
 }
