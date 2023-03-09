@@ -10,7 +10,11 @@
         {
             "name": "Philipp Madl",
             "role": "Developer"
-        }
+        },
+		{
+			"name": "Andreas Müller",
+			"role": "Developer"
+		}
     ],
     "license": "GPL-2.0-or-later",
     "require": {
