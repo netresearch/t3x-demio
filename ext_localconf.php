@@ -23,6 +23,21 @@ defined('TYPO3_MODE') || die('Access denied.');
         []
     );
 
+
+    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+        \TYPO3\CMS\Core\Imaging\IconRegistry::class
+    );
+    $iconRegistry->registerIcon(
+        'demio-plugin-list', // Icon-Identifier, z.B. tx-myext-action-preview
+        \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+        ['source' => 'EXT:demio/Resources/Public/Icons/Icon.png']
+    );
+    $iconRegistry->registerIcon(
+        'demio-plugin-single', // Icon-Identifier, z.B. tx-myext-action-preview
+        \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+        ['source' => 'EXT:demio/Resources/Public/Icons/Icon.png']
+    );
+
     // wizards
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         'mod {
