@@ -9,6 +9,12 @@ use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+/**
+ * Class SelectEvent
+ *
+ * @author  Andreas Müller <andreas.mueller@netresearch.de>
+ * @link    https://www.netresearch.de
+ */
 class SelectEvent extends AbstractFormElement
 {
     /**
@@ -17,7 +23,7 @@ class SelectEvent extends AbstractFormElement
      * @return array
      * @throws GuzzleException
      */
-    public function render():array
+    public function render(): array
     {
         // Get events from API
         $demioService = GeneralUtility::makeInstance(DemioService::class);
@@ -27,10 +33,12 @@ class SelectEvent extends AbstractFormElement
         $html[] = '<select class="form-select form-control-adapt" name="' . $this->data['parameterArray']['itemFormElName'] . '">';
 
         foreach ($events as $event) {
-            if ($event['id'] ===  (int) $this->data['parameterArray']['itemFormElValue']) {
-                $html[] = '<option value="' . $event['id'] . '" selected>' . $event['name'] . ' ['. $event['id'] .']</option>';
-            } else {
-                $html[] = '<option value="' . $event['id'] . '">' . $event['name'] . ' ['. $event['id'] .']</option>';
+            if ($event['status'] !== 'finished') {
+                if ($event['id'] ===  (int) $this->data['parameterArray']['itemFormElValue']) {
+                    $html[] = '<option value="' . $event['id'] . '" selected>' . $event['name'] . ' ['. $event['id'] .']</option>';
+                } else {
+                    $html[] = '<option value="' . $event['id'] . '">' . $event['name'] . ' ['. $event['id'] .']</option>';
+                }
             }
         }
         $html[] = '</select>';

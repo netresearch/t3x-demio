@@ -25,31 +25,34 @@ use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
  */
 class SingleController extends ActionController
 {
-    public function __construct(
-        private readonly DemioService $demioService
-    ) {}
+    private DemioService  $demioService;
+
+    /**
+     * @param DemioService $demioService
+     */
+    public function __construct(DemioService $demioService)
+    {
+        $this->demioService = $demioService;
+    }
 
     /**
      * action show
-     *
-     * @return ResponseInterface
-     * @throws GuzzleException
-     * @throws NoSuchArgumentException
      */
-    public function showAction(): ResponseInterface
+    public function showAction()
     {
         // If the url contains an event id, fetch the event from the api and assign it to the view
-        if($this->request->hasArgument('event')) {
+        if ($this->request->hasArgument('event')) {
             $id = (int) $this->request->getArgument('event')['id'];
-            $event = $this->demioService->fetchEvent($id);
             $this->view->assign('showBackLink', true);
-            $this->view->assign('event', $event);
         } else {
             $id = (int) $this->settings['event'];
+        }
+
+        try {
             $event = $this->demioService->fetchEvent($id);
             $this->view->assign('event', $event);
+        } catch (GuzzleException $e) {
+            $this->view->assign('event', null);
         }
-        return $this->htmlResponse();
     }
-
 }

@@ -55,18 +55,23 @@ class EventWidget implements WidgetInterface
     /**
      * @var ButtonProviderInterface|null
      */
-    private mixed $buttonProvider;
+    private $buttonProvider;
 
+    /**
+     * @param WidgetConfigurationInterface $configuration
+     * @param StandaloneView $view
+     * @param $buttonProvider
+     * @param array $options
+     */
     public function __construct(
         WidgetConfigurationInterface $configuration,
-        StandaloneView               $view,
-                                     $buttonProvider = null,
-        array                        $options = []
-    )
-    {
+        StandaloneView $view,
+        $buttonProvider = null,
+        array $options = []
+    ) {
         $this->configuration = $configuration;
         $this->view = $view;
-        $this->options = array_merge([ 'text' => '' ], $options);
+        $this->options = array_merge(['text' => ''], $options);
         $this->buttonProvider = $buttonProvider;
     }
 

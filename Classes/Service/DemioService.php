@@ -34,9 +34,12 @@ class DemioService implements LoggerAwareInterface
     /**
      * @var array $settings The extension settings
      */
-    protected mixed $settings;
+    protected array $settings;
 
-    protected mixed $headers;
+    /**
+     * @var array $headers
+     */
+    protected array $headers;
 
     /**
      * DemioService constructor.
@@ -61,7 +64,7 @@ class DemioService implements LoggerAwareInterface
      * @return mixed
      * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function fetchEvents(string $type = ''): mixed
+    public function fetchEvents(string $type = ''): array
     {
         $response = $this->httpClient->request('GET', self::API_URL . 'events?type=' . $type, [
             'headers' => $this->headers
@@ -70,11 +73,11 @@ class DemioService implements LoggerAwareInterface
 
         if ($statusCode === 200) {
             return json_decode($response->getBody(), true);
-        } else {
-            $error = 'API request failed with status code ' . $statusCode;
-            $this->logger->error($error);
-            throw new \RuntimeException($error);
         }
+
+        $error = 'API request failed with status code ' . $statusCode;
+        $this->logger->error($error);
+        throw new \RuntimeException($error);
     }
 
     /**
@@ -86,7 +89,7 @@ class DemioService implements LoggerAwareInterface
      * @return mixed
      * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
      */
-    public function fetchEvent(int $id, bool $active = true): mixed
+    public function fetchEvent(int $id, bool $active = true): array
     {
         $response = $this->httpClient->request('GET', self::API_URL.'event/' . $id . '?active=' . $active, [
             'headers' => $this->headers
@@ -97,11 +100,11 @@ class DemioService implements LoggerAwareInterface
 
         if ($statusCode === 200) {
             return json_decode($response->getBody(), true);
-        } else {
-            $error = 'API request failed with status code ' . $statusCode;
-            $this->logger->error($error);
-            throw new \RuntimeException($error);
         }
+
+        $error = 'API request failed with status code ' . $statusCode;
+        $this->logger->error($error);
+        throw new \RuntimeException($error);
     }
 
 }

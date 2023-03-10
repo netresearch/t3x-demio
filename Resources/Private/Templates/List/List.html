@@ -13,13 +13,11 @@
                 <td>
                     <f:if condition="{settings.showDescription}">
                         <f:then>
-                            <p>
-                                <f:link.action action="show" arguments="{id: event.id}">{event.name}</f:link.action>
-                            </p>
+                            <p>{event.name}</p>
                             {event.description -> f:format.html()}
                         </f:then>
                         <f:else>
-                            <f:link.action action="show" arguments="{event : event}">{event.name}</f:link.action>
+                            {event.name}
                         </f:else>
                     </f:if>
                 </td>
