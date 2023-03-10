@@ -25,3 +25,8 @@
 - PeatGerman
 - philipp.madl
 
+# 1.1.0
+
+## MISC
+- Compatibility for PHP7.4
+- Compatibility to TYPO3 10.4
