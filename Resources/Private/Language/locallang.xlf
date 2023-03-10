@@ -10,6 +10,9 @@
 			<trans-unit id="plugin.list.title">
 				<source>Demio: List Webinares</source>
 			</trans-unit>
+			<trans-unit id="plugin.single.title">
+				<source>Demio: Detail Webinar</source>
+			</trans-unit>
 
 			<trans-unit id="register">
 				<source>register</source>
