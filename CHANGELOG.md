@@ -1,9 +1,10 @@
-# 1.1.1
+# 1.1.2
 
 ## MISC
 
 - Add new extension icon
 - Add github action for publishing to TER
+- Add company to ext_emconf.php
 
 # 1.1.0
 
