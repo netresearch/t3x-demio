@@ -1,3 +1,16 @@
+# 1.1.1
+
+## MISC
+
+- Add new extension icon
+- Add github action for publishing to TER
+
+# 1.1.0
+
+## MISC
+- Compatibility for PHP7.4
+- Compatibility to TYPO3 10.4
+
 # 1.0.0
 
 ## MISC
@@ -24,9 +37,3 @@
 - André Lademann
 - PeatGerman
 - philipp.madl
-
-# 1.1.0
-
-## MISC
-- Compatibility for PHP7.4
-- Compatibility to TYPO3 10.4
